@@ -63,7 +63,7 @@ function calculate(option::VanillaOption, engine::AmericanBinomial, data::Market
 	return Ct
 end
 
-function calculate(option::VanillaOption, engine::NaiveMonteCarloEngine, data::MarketData)
+function calculate(option::VanillaOption, engine::NaiveMonteCarlo, data::MarketData)
     rate = data.rate
     spot = data.spot
     vol = data.volatility
