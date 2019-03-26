@@ -25,6 +25,7 @@ export
 	AnalyticEngine,
 	EuropeanBinomial,
 	AmericanBinomial,
+    NaiveMonteCarlo
 	calculate,
 
 

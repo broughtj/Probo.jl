@@ -19,11 +19,12 @@ struct NaiveMonteCarlo <: MonteCarloEngine
     repititions::Integer
 end
 
+#=
 struct LeastSquaresMonteCarlo <: MonteCarloEngine
     steps::Integer
     repititions::Integer
 end
-
+=#
 
 
 ## Methods here
@@ -87,11 +88,11 @@ function calculate(option::VanillaOption, engine::NaiveMonteCarloEngine, data::M
     
 end
 
-
+#=
 function calcualte(option::VanillaOption, engine::LeastSquaresMonteCarlo, data::MarketData)
    return 9.21233 
 end
-    
+=#  
     
     
     
