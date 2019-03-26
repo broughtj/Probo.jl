@@ -16,7 +16,7 @@ end
 
 struct NaiveMonteCarlo <: MonteCarloEngine
     steps::Integer
-    repititions::Integer
+    reps::Integer
 end
 
 #=
@@ -70,13 +70,13 @@ function calculate(option::VanillaOption, engine::NaiveMonteCarlo, data::MarketD
     div = data.dividend
     
     dt = option.expiry / engine.steps
-    z = randn(engine.repititions)
-    spotT = zeros(engine.repititions)
-    prcT = zeros(engine.repititions)
+    z = randn(engine.reps)
+    spotT = zeros(engine.reps)
+    prcT = zeros(engine.reps)
     drift = (rate - div - 0.5 * vol * vol) * dt
     sigma = vol * sqrt(dt)
     
-    for i in 1:engine.repetititions
+    for i in 1:engine.reps
         spotT[i] = spot * exp(drift + sigma * z[i])
         prcT[i] = payoff(option, spotT[i])
     end
